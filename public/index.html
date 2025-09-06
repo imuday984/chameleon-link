@@ -1,0 +1,59 @@
+<!-- public/index.html - PROFESSIONAL UI UPGRADE -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girgit Links | Custom Time Rules</title>
+    <!-- Google Fonts for a modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <!-- Our new stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header class="app-header">
+            <i class="fa-solid fa-link header-icon"></i>
+            <h1>Girgit Links</h1>
+            <p>Create intelligent links with custom time schedules.</p>
+        </header>
+        
+        <form id="link-form" class="form-card">
+            <div class="form-group">
+                <label for="defaultUrl">Default URL</label>
+                <span>The fallback URL if no time rule matches.</span>
+                <input type="url" id="defaultUrl" placeholder="https://example.com/default" required>
+            </div>
+            
+            <div class="rules-section">
+                <label>Time Rules</label>
+                <span>Define specific time slots and their destination URLs.</span>
+                <div id="time-rules-container">
+                    <!-- Dynamic rules will be inserted here by JavaScript -->
+                </div>
+                <button type="button" id="add-rule-btn" class="add-rule-btn">
+                    <i class="fa-solid fa-plus"></i> Add Time Rule
+                </button>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+                <i class="fa-solid fa-magic-wand-sparkles"></i> Create Smart Link
+            </button>
+        </form>
+        
+        <div id="result-container" class="result-card hidden">
+            <h3>Your Link is Ready!</h3>
+            <div class="result-box">
+                <span id="result-url"></span>
+                <button id="copy-btn" title="Copy to clipboard"><i class="fa-regular fa-copy"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,165 @@
+/* public/style.css - COMPLETE MAKEOVER */
+
+/* --- Theming and Variables --- */
+:root {
+    --primary-color: #4f46e5;
+    --primary-hover: #4338ca;
+    --background-color: #f3f4f6;
+    --card-background: #ffffff;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --border-color: #d1d5db;
+    --success-bg: #d1fae5;
+    --success-text: #065f46;
+    --danger-bg: #fee2e2;
+    --danger-text: #991b1b;
+}
+
+/* --- Global Reset and Setup --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+.main-container {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 20px;
+}
+i { margin-right: 8px; }
+
+/* --- Header --- */
+.app-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.app-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.app-header p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+.header-icon {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+/* --- Forms & Cards --- */
+.form-card, .result-card {
+    background-color: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+.form-group, .rules-section {
+    margin-bottom: 25px;
+}
+label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.form-group span, .rules-section span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+input[type="url"], input[type="number"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+input[type="url"]:focus, input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+/* --- Dynamic Rule Styling --- */
+.rule-group {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.time-input { flex: 0 1 100px; }
+.url-input { flex: 1 1 auto; }
+.remove-rule-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.2s;
+}
+.remove-rule-btn:hover { color: var(--danger-text); }
+.add-rule-btn {
+    background: transparent;
+    border: 1px dashed var(--border-color);
+    color: var(--text-primary);
+    padding: 10px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+.add-rule-btn:hover {
+    background-color: #f9fafb;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* --- Buttons --- */
+.submit-btn {
+    width: 100%;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.submit-btn:hover { background-color: var(--primary-hover); }
+
+/* --- Result Box --- */
+.result-card { text-align: center; }
+.result-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--success-bg);
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+#result-url {
+    font-weight: 700;
+    color: var(--success-text);
+    word-break: break-all;
+}
+#copy-btn {
+    background: transparent;
+    border: none;
+    color: var(--success-text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.hidden { display: none; }
