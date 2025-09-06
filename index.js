@@ -64,7 +64,7 @@ app.post('/shorten', (req, res) => {
     // --- NEW: Save changes to the file ---
     saveDatabase(); 
 
-    const shortUrl = `http://localhost:${PORT}/${shortCode}`;
+    const shortUrl = `${req.protocol}://${req.get('host')}/${shortCode}`;
     console.log(`[INFO] Created advanced link ${shortCode} with ${timeRules.length} rules.`);
     res.status(201).json({ message: 'Customizable time-aware URL created!', shortUrl });
 });
